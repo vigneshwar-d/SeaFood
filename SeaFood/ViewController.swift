@@ -43,11 +43,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
                 fatalError("Error in requestting the VNClassificationObservation")
             }
             if let firstResult = results.first{
-                if firstResult.identifier.contains("hotdog"){
-                    self.navigationItem.title = "Hotdog!"
-                }else{
-                    self.navigationItem.title = "Not Hotdog"
-                }
+                self.navigationItem.title = firstResult.identifier
             }
         }
         let handler = VNImageRequestHandler(ciImage: image)
